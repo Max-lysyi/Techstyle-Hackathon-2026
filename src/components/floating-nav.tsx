@@ -1,18 +1,22 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Cpu, Plus, LayoutDashboard, BookOpen, Palette, History } from 'lucide-react';
-import { usePipelineStore } from '@/store/pipeline-store';
-
-const navLinks = [
-  { label: 'Робоча зона', icon: LayoutDashboard, id: 'workspace' },
-  { label: 'База лекал (.ai)', icon: BookOpen, id: 'patterns' },
-  { label: 'Палітра виробництва', icon: Palette, id: 'palette' },
-  { label: 'Історія (TIFF)', icon: History, id: 'history' },
-];
+import { User, LogOut, ChevronRight, LayoutGrid } from 'lucide-react';
+import { useAppStore } from '@/store/app-store';
 
 export function FloatingNav() {
-  const { reset, isProcessing } = usePipelineStore();
+  const { isLoggedIn, user, navigateTo, logout } = useAppStore();
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const navLinks = [
+    { label: 'Про продукт', target: 'hero' },
+    { label: 'Етапи роботи', target: 'workflow' },
+    { label: 'Відео-демо', target: 'video' },
+    { label: 'Переваги B2B', target: 'b2b' },
+  ];
 
   return (
     <motion.header
@@ -21,54 +25,91 @@ export function FloatingNav() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1200px]"
     >
-      <nav className="flex items-center justify-between rounded-full bg-white/95 backdrop-blur-xl shadow-lg shadow-black/5 border border-gray-100 px-4 sm:px-8 py-3">
+      <nav className="flex items-center justify-between rounded-full bg-white/95 backdrop-blur-xl shadow-lg shadow-black/5 border border-gray-100 px-4 sm:px-6 py-3">
         {/* Logo */}
-        <div className="flex items-center gap-2 shrink-0">
+        <button
+          onClick={() => navigateTo('landing')}
+          className="flex items-center gap-2 shrink-0 cursor-pointer"
+        >
           <div className="flex items-baseline gap-0.5 select-none">
-            <span className="text-xl font-black italic tracking-tight text-sport-red">MAX</span>
-            <span className="text-xl font-black italic tracking-tight text-charcoal-dark">SPORT</span>
+            <span className="text-xl font-black italic tracking-tight text-[#D90416]">MAX</span>
+            <span className="text-xl font-black italic tracking-tight text-[#1E1E1E]">SPORT</span>
           </div>
-          <span className="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full bg-gradient-to-r from-sport-red to-sport-red-dark text-[10px] font-bold text-white tracking-wider uppercase">
+          <span className="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full bg-gradient-to-r from-[#D90416] to-[#B8000F] text-[10px] font-bold text-white tracking-wider uppercase">
             AI STUDIO
           </span>
-        </div>
+        </button>
 
         {/* Center Nav Links */}
         <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <button
-              key={link.id}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-muted-gray hover:text-deep hover:bg-pearl transition-all duration-200 cursor-pointer"
+              key={link.target}
+              onClick={() => scrollTo(link.target)}
+              className="px-3 py-1.5 rounded-full text-xs font-medium text-gray-500 hover:text-[#1E1E1E] hover:bg-[#F3F4F6] transition-all duration-200 cursor-pointer"
             >
-              <link.icon size={14} strokeWidth={2} />
-              <span>{link.label}</span>
+              {link.label}
             </button>
           ))}
+          <button
+            onClick={() => navigateTo('size-charts')}
+            className="px-3 py-1.5 rounded-full text-xs font-medium text-[#D90416] hover:bg-red-50 transition-all duration-200 cursor-pointer font-semibold"
+          >
+            Таблиці розмірів
+          </button>
         </div>
 
-        {/* Right Side */}
-        <div className="flex items-center gap-3 shrink-0">
-          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-50 border border-green-200">
-            <motion.div
-              className="w-2 h-2 rounded-full bg-emerald-500"
-              animate={{ scale: [1, 1.3, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            />
-            <span className="text-[11px] font-medium text-emerald-700">
-              <Cpu size={11} className="inline mr-0.5 -mt-0.5" />
-              AI Engine: Online
-            </span>
-          </div>
-          <motion.button
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            disabled={isProcessing}
-            onClick={() => reset()}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-sport-red to-sport-red-dark text-white text-xs font-bold tracking-wide shadow-md shadow-red-200/50 hover:shadow-lg hover:shadow-red-300/50 transition-all duration-200 disabled:opacity-50 cursor-pointer"
-          >
-            <Plus size={14} strokeWidth={3} />
-            <span className="hidden sm:inline">Нове замовлення</span>
-          </motion.button>
+        {/* Right: Auth Actions */}
+        <div className="flex items-center gap-2 shrink-0">
+          {isLoggedIn ? (
+            <>
+              {/* User badge */}
+              <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F3F4F6] border border-gray-200">
+                <User size={13} className="text-[#D90416]" />
+                <span className="text-[11px] font-semibold text-[#1E1E1E]">
+                  {user?.name ?? 'Оператор MAXSport'}
+                </span>
+              </div>
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => navigateTo('editor')}
+                className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-[#D90416] to-[#B8000F] text-white text-xs font-bold shadow-md shadow-red-200/50 hover:shadow-lg transition-all cursor-pointer"
+              >
+                <LayoutGrid size={13} strokeWidth={2.5} />
+                <span className="hidden sm:inline">Відкрити Редактор</span>
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={logout}
+                className="flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-medium text-gray-500 hover:text-[#1E1E1E] hover:bg-[#F3F4F6] transition-all cursor-pointer"
+              >
+                <LogOut size={13} />
+                <span className="hidden sm:inline">Вийти</span>
+              </motion.button>
+            </>
+          ) : (
+            <>
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => navigateTo('auth', 'login')}
+                className="px-4 py-2 rounded-full text-xs font-bold text-gray-600 border border-gray-200 hover:bg-[#F3F4F6] transition-all cursor-pointer"
+              >
+                Увійти
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => navigateTo('auth', 'register')}
+                className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-[#D90416] to-[#B8000F] text-white text-xs font-bold shadow-md shadow-red-200/50 hover:shadow-lg transition-all cursor-pointer"
+              >
+                Реєстрація
+                <ChevronRight size={13} />
+              </motion.button>
+            </>
+          )}
         </div>
       </nav>
     </motion.header>
