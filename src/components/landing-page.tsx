@@ -131,15 +131,16 @@ function HeroSection({
           </motion.button>
         </motion.div>
 
-        {/* Scroll hint */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity }}
-        >
-          <ArrowDown size={20} />
-        </motion.div>
+
       </div>
+      {/* Scroll hint */}
+      <motion.div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500 mb-5"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 1.8, repeat: Infinity }}
+      >
+        <ArrowDown size={20} />
+      </motion.div>
     </section>
   );
 }
