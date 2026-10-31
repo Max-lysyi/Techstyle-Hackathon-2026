@@ -332,7 +332,7 @@ function VideoSection({
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={onTryEditor}
+                onClick={() => window.location.href = '/studio'}
                 className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#D90416] to-[#B8000F] text-white text-sm font-bold shadow-lg shadow-red-900/40 hover:shadow-red-900/60 transition-all cursor-pointer"
               >
                 Спробувати в Редакторі
