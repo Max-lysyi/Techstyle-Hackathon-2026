@@ -5,7 +5,6 @@ const routes={design:'/api/design',analyze:'/api/analyze',assets:'/api/assets/re
 const fail=(error:string,status:number)=>Response.json({error},{status,headers:{'Cache-Control':'no-store'}});
 export async function POST(request:Request){
   if(!sameOrigin(request))return fail('Стороннє джерело запиту.',403);
-  if(!process.env.OPENAI_API_KEY)return fail('OPENAI_API_KEY не налаштовано на сервері.',503);
   const task=new URL(request.url).searchParams.get('task') as keyof typeof routes;
   if(!Object.hasOwn(routes,task))return fail('Невідома операція.',400);
   try{

@@ -274,7 +274,7 @@ const useDecomposition = create<SelectionState>((set) => ({
         if (hash) { if (analysisCache.size >= 10) analysisCache.delete(analysisCache.keys().next().value!); analysisCache.set(hash, payload); }
       }
       if (controller.signal.aborted || !stillCurrent()) return;
-      const regions = payload.data.elements.map(element => {
+      const regions = (payload?.data?.elements || []).map(element => {
         const x = Math.min(image.width - 1, Math.max(0, Math.floor(element.bbox.x * image.width)));
         const y = Math.min(image.height - 1, Math.max(0, Math.floor(element.bbox.y * image.height)));
         const right = Math.min(image.width, Math.ceil((element.bbox.x + element.bbox.width) * image.width));
