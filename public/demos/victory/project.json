@@ -1,0 +1,911 @@
+{
+  "schemaVersion": 1,
+  "id": "victory",
+  "title": "VICTORY · птахи",
+  "description": "Чотири деталі, різноколірні принти, герб і написи.",
+  "originalFile": "/demos/victory/original.jpg",
+  "sourceArchiveSha256": "ba3ea73778bc61a431a6e74bb1a2e70fce749a92c938e3361087be5540e303ce",
+  "provenance": "Раніше отриманий і збережений результат OpenAI; під час відкриття API не викликається.",
+  "notes": [
+    "Невидимий принт реконструйовано приблизно. Стикування деталей перевіряє конструктор.",
+    "Це збережена генерація 1K; профіль 2K застосовується до нових запусків."
+  ],
+  "parts": [
+    {
+      "id": "front",
+      "name": "Перед",
+      "status": "ready",
+      "canvas": {
+        "width": 1024,
+        "height": 1536
+      },
+      "sourceRect": {
+        "x": 179,
+        "y": 93,
+        "width": 346,
+        "height": 504
+      },
+      "sourceNormalized": {
+        "x": 0.13984375,
+        "y": 0.07948717948717948,
+        "width": 0.2703125,
+        "height": 0.4307692307692308
+      },
+      "model": "gpt-image-2.5-sunburst",
+      "usage": [
+        {
+          "input_tokens": 1008,
+          "input_tokens_details": {
+            "image_tokens": 704,
+            "text_tokens": 304
+          },
+          "output_tokens": 1372,
+          "output_tokens_details": {
+            "image_tokens": 1372,
+            "text_tokens": 0
+          },
+          "total_tokens": 2380
+        },
+        {
+          "input_tokens": 1774,
+          "input_tokens_details": {
+            "image_tokens": 1536,
+            "text_tokens": 238
+          },
+          "output_tokens": 1372,
+          "output_tokens_details": {
+            "image_tokens": 1372,
+            "text_tokens": 0
+          },
+          "total_tokens": 3146
+        }
+      ],
+      "reconstruction": true,
+      "warnings": [
+        "Розгортка та продовження невидимих ділянок є реконструкцією."
+      ],
+      "groups": [],
+      "layers": [
+        {
+          "id": "part-layer-0",
+          "name": "Основа",
+          "type": "background",
+          "kind": "solid",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 0,
+          "groupId": null,
+          "fillHex": "#001345",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/front/layers/01.webp",
+          "maskFile": "parts/front/masks/01.png"
+        },
+        {
+          "id": "part-layer-1",
+          "name": "Кольоровий принт 1",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 1,
+          "groupId": null,
+          "fillHex": "#253657",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/front/layers/02.webp",
+          "maskFile": "parts/front/masks/02.png"
+        },
+        {
+          "id": "part-layer-2",
+          "name": "Кольоровий принт 2",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 2,
+          "groupId": null,
+          "fillHex": "#f0cd36",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/front/layers/03.webp",
+          "maskFile": "parts/front/masks/03.png"
+        },
+        {
+          "id": "part-layer-3",
+          "name": "Кольоровий принт 3",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 3,
+          "groupId": null,
+          "fillHex": "#013eab",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/front/layers/04.webp",
+          "maskFile": "parts/front/masks/04.png"
+        },
+        {
+          "id": "part-layer-4",
+          "name": "Орнамент",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 4,
+          "groupId": null,
+          "fillHex": "#c2ab44",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/front/layers/05.webp",
+          "maskFile": "parts/front/masks/05.png"
+        },
+        {
+          "id": "part-layer-6",
+          "name": "Градієнт",
+          "type": "graphic",
+          "kind": "gradient",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 6,
+          "groupId": null,
+          "fillHex": "#013d9b",
+          "gradient": {
+            "sourceStops": [
+              "#000000",
+              "#ffffff"
+            ],
+            "stops": [
+              "#000000",
+              "#ffffff"
+            ]
+          },
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/front/layers/06.webp",
+          "maskFile": "parts/front/masks/06.png"
+        }
+      ],
+      "masterFile": "/demos/victory/parts/front/master.webp",
+      "previewFile": "parts/front/preview.png",
+      "backgroundFile": "parts/front/background.png",
+      "paletteFile": "parts/front/palette.csv",
+      "removedMaskFile": null
+    },
+    {
+      "id": "back",
+      "name": "Спинка",
+      "status": "ready",
+      "canvas": {
+        "width": 1024,
+        "height": 1536
+      },
+      "sourceRect": {
+        "x": 793,
+        "y": 93,
+        "width": 295,
+        "height": 504
+      },
+      "sourceNormalized": {
+        "x": 0.61953125,
+        "y": 0.07948717948717948,
+        "width": 0.23046875,
+        "height": 0.4307692307692308
+      },
+      "model": "gpt-image-2.5-sunburst",
+      "usage": [
+        {
+          "input_tokens": 912,
+          "input_tokens_details": {
+            "image_tokens": 608,
+            "text_tokens": 304
+          },
+          "output_tokens": 1372,
+          "output_tokens_details": {
+            "image_tokens": 1372,
+            "text_tokens": 0
+          },
+          "total_tokens": 2284
+        },
+        {
+          "input_tokens": 1774,
+          "input_tokens_details": {
+            "image_tokens": 1536,
+            "text_tokens": 238
+          },
+          "output_tokens": 1372,
+          "output_tokens_details": {
+            "image_tokens": 1372,
+            "text_tokens": 0
+          },
+          "total_tokens": 3146
+        }
+      ],
+      "reconstruction": true,
+      "warnings": [
+        "Розгортка та продовження невидимих ділянок є реконструкцією.",
+        "Під залишковими написами принт відновлено локально; перевірте ці місця."
+      ],
+      "groups": [],
+      "layers": [
+        {
+          "id": "part-layer-0",
+          "name": "Основа",
+          "type": "background",
+          "kind": "solid",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 0,
+          "groupId": null,
+          "fillHex": "#00113b",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/back/layers/01.webp",
+          "maskFile": "parts/back/masks/01.png"
+        },
+        {
+          "id": "part-layer-1",
+          "name": "Кольоровий принт 1",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 1,
+          "groupId": null,
+          "fillHex": "#314153",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/back/layers/02.webp",
+          "maskFile": "parts/back/masks/02.png"
+        },
+        {
+          "id": "part-layer-2",
+          "name": "Кольоровий принт 2",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 2,
+          "groupId": null,
+          "fillHex": "#7b9070",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/back/layers/03.webp",
+          "maskFile": "parts/back/masks/03.png"
+        },
+        {
+          "id": "part-layer-3",
+          "name": "Кольоровий принт 3",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 3,
+          "groupId": null,
+          "fillHex": "#093e97",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/back/layers/04.webp",
+          "maskFile": "parts/back/masks/04.png"
+        },
+        {
+          "id": "part-layer-4",
+          "name": "Орнамент",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 4,
+          "groupId": null,
+          "fillHex": "#858959",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/back/layers/05.webp",
+          "maskFile": "parts/back/masks/05.png"
+        },
+        {
+          "id": "part-layer-5",
+          "name": "Текстура",
+          "type": "graphic",
+          "kind": "texture",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 5,
+          "groupId": null,
+          "fillHex": "#6495be",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/back/layers/06.webp",
+          "maskFile": "parts/back/masks/06.png"
+        },
+        {
+          "id": "part-layer-6",
+          "name": "Градієнт",
+          "type": "graphic",
+          "kind": "gradient",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 6,
+          "groupId": null,
+          "fillHex": "#f5eac6",
+          "gradient": {
+            "sourceStops": [
+              "#000000",
+              "#ffffff"
+            ],
+            "stops": [
+              "#000000",
+              "#ffffff"
+            ]
+          },
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/back/layers/07.webp",
+          "maskFile": "parts/back/masks/07.png"
+        }
+      ],
+      "masterFile": "/demos/victory/parts/back/master.webp",
+      "previewFile": "parts/back/preview.png",
+      "backgroundFile": "parts/back/background.png",
+      "paletteFile": "parts/back/palette.csv",
+      "removedMaskFile": "parts/back/removed-marks-mask.png"
+    },
+    {
+      "id": "right-sleeve",
+      "name": "Правий рукав",
+      "status": "ready",
+      "canvas": {
+        "width": 768,
+        "height": 1536
+      },
+      "sourceRect": {
+        "x": 89,
+        "y": 105,
+        "width": 141,
+        "height": 468
+      },
+      "sourceNormalized": {
+        "x": 0.06953125,
+        "y": 0.08974358974358974,
+        "width": 0.11015625,
+        "height": 0.4
+      },
+      "model": "gpt-image-2.5-sunburst",
+      "usage": [
+        {
+          "input_tokens": 610,
+          "input_tokens_details": {
+            "image_tokens": 300,
+            "text_tokens": 310
+          },
+          "output_tokens": 916,
+          "output_tokens_details": {
+            "image_tokens": 916,
+            "text_tokens": 0
+          },
+          "total_tokens": 1526
+        },
+        {
+          "input_tokens": 1390,
+          "input_tokens_details": {
+            "image_tokens": 1152,
+            "text_tokens": 238
+          },
+          "output_tokens": 916,
+          "output_tokens_details": {
+            "image_tokens": 916,
+            "text_tokens": 0
+          },
+          "total_tokens": 2306
+        }
+      ],
+      "reconstruction": true,
+      "warnings": [
+        "Розгортка та продовження невидимих ділянок є реконструкцією.",
+        "Принт закриває всю деталь: колір прихованої основи оцінено. За потреби задайте його з палітри."
+      ],
+      "groups": [],
+      "layers": [
+        {
+          "id": "part-layer-0",
+          "name": "Основа",
+          "type": "background",
+          "kind": "solid",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 0,
+          "groupId": null,
+          "fillHex": "#001b55",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/right-sleeve/layers/01.webp",
+          "maskFile": "parts/right-sleeve/masks/01.png"
+        },
+        {
+          "id": "part-layer-4",
+          "name": "Орнамент",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 4,
+          "groupId": null,
+          "fillHex": "#eac034",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/right-sleeve/layers/02.webp",
+          "maskFile": "parts/right-sleeve/masks/02.png"
+        },
+        {
+          "id": "part-layer-6",
+          "name": "Градієнт",
+          "type": "graphic",
+          "kind": "gradient",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 6,
+          "groupId": null,
+          "fillHex": "#01256c",
+          "gradient": {
+            "sourceStops": [
+              "#001037",
+              "#0245a9"
+            ],
+            "stops": [
+              "#001037",
+              "#0245a9"
+            ]
+          },
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/right-sleeve/layers/03.webp",
+          "maskFile": "parts/right-sleeve/masks/03.png"
+        }
+      ],
+      "masterFile": "/demos/victory/parts/right-sleeve/master.webp",
+      "previewFile": "parts/right-sleeve/preview.png",
+      "backgroundFile": "parts/right-sleeve/background.png",
+      "paletteFile": "parts/right-sleeve/palette.csv",
+      "removedMaskFile": null
+    },
+    {
+      "id": "left-sleeve",
+      "name": "Лівий рукав",
+      "status": "ready",
+      "canvas": {
+        "width": 768,
+        "height": 1536
+      },
+      "sourceRect": {
+        "x": 473,
+        "y": 128,
+        "width": 128,
+        "height": 445
+      },
+      "sourceNormalized": {
+        "x": 0.36953125,
+        "y": 0.1094017094017094,
+        "width": 0.1,
+        "height": 0.3803418803418803
+      },
+      "model": "gpt-image-2.5-sunburst",
+      "usage": [
+        {
+          "input_tokens": 590,
+          "input_tokens_details": {
+            "image_tokens": 280,
+            "text_tokens": 310
+          },
+          "output_tokens": 916,
+          "output_tokens_details": {
+            "image_tokens": 916,
+            "text_tokens": 0
+          },
+          "total_tokens": 1506
+        },
+        {
+          "input_tokens": 1390,
+          "input_tokens_details": {
+            "image_tokens": 1152,
+            "text_tokens": 238
+          },
+          "output_tokens": 916,
+          "output_tokens_details": {
+            "image_tokens": 916,
+            "text_tokens": 0
+          },
+          "total_tokens": 2306
+        }
+      ],
+      "reconstruction": true,
+      "warnings": [
+        "Розгортка та продовження невидимих ділянок є реконструкцією.",
+        "Принт закриває всю деталь: колір прихованої основи оцінено. За потреби задайте його з палітри."
+      ],
+      "groups": [],
+      "layers": [
+        {
+          "id": "part-layer-0",
+          "name": "Основа",
+          "type": "background",
+          "kind": "solid",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 0,
+          "groupId": null,
+          "fillHex": "#01174a",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/left-sleeve/layers/01.webp",
+          "maskFile": "parts/left-sleeve/masks/01.png"
+        },
+        {
+          "id": "part-layer-4",
+          "name": "Орнамент",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 4,
+          "groupId": null,
+          "fillHex": "#dfb944",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/left-sleeve/layers/02.webp",
+          "maskFile": "parts/left-sleeve/masks/02.png"
+        },
+        {
+          "id": "part-layer-6",
+          "name": "Градієнт",
+          "type": "graphic",
+          "kind": "gradient",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 6,
+          "groupId": null,
+          "fillHex": "#02246e",
+          "gradient": {
+            "sourceStops": [
+              "#010f36",
+              "#085ed3"
+            ],
+            "stops": [
+              "#010f36",
+              "#085ed3"
+            ]
+          },
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/victory/parts/left-sleeve/layers/03.webp",
+          "maskFile": "parts/left-sleeve/masks/03.png"
+        }
+      ],
+      "masterFile": "/demos/victory/parts/left-sleeve/master.webp",
+      "previewFile": "parts/left-sleeve/preview.png",
+      "backgroundFile": "parts/left-sleeve/background.png",
+      "paletteFile": "parts/left-sleeve/palette.csv",
+      "removedMaskFile": null
+    }
+  ],
+  "elements": [
+    {
+      "id": "asset-el1",
+      "name": "жовтий тризуб",
+      "type": "logo",
+      "file": "/demos/victory/elements/01.png",
+      "maskFile": "elements/01-mask.png",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1024
+      },
+      "sourceBounds": {
+        "x": 367,
+        "y": 126,
+        "width": 52,
+        "height": 68
+      },
+      "placement": null,
+      "source": "ai-reconstruction",
+      "reconstruction": true,
+      "model": "gpt-image-2.5-sunburst",
+      "usage": {
+        "input_tokens": 1281,
+        "input_tokens_details": {
+          "image_tokens": 922,
+          "text_tokens": 359
+        },
+        "output_tokens": 1756,
+        "output_tokens_details": {
+          "image_tokens": 1756,
+          "text_tokens": 0
+        },
+        "total_tokens": 3037
+      },
+      "settings": {
+        "text": "",
+        "instructions": "",
+        "size": "1024x1024"
+      },
+      "originalExtractFile": null,
+      "approved": true,
+      "note": "Генеративна реконструкція. Роздільність PNG не є підтвердженням відновленої справжньої деталізації. Координати ескізу є лише референсом, автоматичного перенесення на деталі немає."
+    },
+    {
+      "id": "asset-el5",
+      "name": "напис «RUDYUK»",
+      "type": "text",
+      "file": "/demos/victory/elements/02.png",
+      "maskFile": "elements/02-mask.png",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "sourceBounds": {
+        "x": 862,
+        "y": 110,
+        "width": 108,
+        "height": 34
+      },
+      "placement": null,
+      "source": "ai-reconstruction",
+      "reconstruction": true,
+      "model": "gpt-image-2.5-sunburst",
+      "usage": {
+        "input_tokens": 809,
+        "input_tokens_details": {
+          "image_tokens": 450,
+          "text_tokens": 359
+        },
+        "output_tokens": 1372,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        },
+        "total_tokens": 2181
+      },
+      "settings": {
+        "text": "",
+        "instructions": "",
+        "size": "1536x1024"
+      },
+      "originalExtractFile": null,
+      "approved": true,
+      "note": "Генеративна реконструкція. Роздільність PNG не є підтвердженням відновленої справжньої деталізації. Координати ескізу є лише референсом, автоматичного перенесення на деталі немає."
+    },
+    {
+      "id": "asset-el6",
+      "name": "напис «VICTORY»",
+      "type": "text",
+      "file": "/demos/victory/elements/03.png",
+      "maskFile": "elements/03-mask.png",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "sourceBounds": {
+        "x": 787,
+        "y": 163,
+        "width": 247,
+        "height": 52
+      },
+      "placement": null,
+      "source": "ai-reconstruction",
+      "reconstruction": true,
+      "model": "gpt-image-2.5-sunburst",
+      "usage": {
+        "input_tokens": 899,
+        "input_tokens_details": {
+          "image_tokens": 541,
+          "text_tokens": 358
+        },
+        "output_tokens": 1372,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        },
+        "total_tokens": 2271
+      },
+      "settings": {
+        "text": "",
+        "instructions": "",
+        "size": "1536x1024"
+      },
+      "originalExtractFile": null,
+      "approved": true,
+      "note": "Генеративна реконструкція. Роздільність PNG не є підтвердженням відновленої справжньої деталізації. Координати ескізу є лише референсом, автоматичного перенесення на деталі немає."
+    }
+  ]
+}

@@ -165,8 +165,8 @@ export function SizeChartsView() {
             На головну
           </button>
           <div className="flex items-baseline gap-1 select-none">
-            <span className="text-xl font-black italic text-[#D90416]">MAX</span>
-            <span className="text-xl font-black italic text-[#1E1E1E]">SPORT</span>
+            <span className="text-xl font-black italic text-[#D90416]">AI</span>
+            <span className="text-xl font-black italic text-[#1E1E1E]">PROMT STUDIO</span>
           </div>
           <h1 className="text-lg font-black text-[#1E1E1E]">Таблиці розмірів</h1>
         </div>
@@ -183,7 +183,7 @@ export function SizeChartsView() {
               ТАБЛИЦІ <span className="text-[#D90416]">РОЗМІРІВ</span>
             </h2>
             <p className="text-gray-500 text-sm max-w-xl mx-auto">
-              Офіційні розмірні сітки MAXSport для спортивної форми. Використовуються AI Studio для автоматичного масштабування розгорток лекал.
+              Розмірні таблиці спортивної форми. Масштаб принта й накладання лекал перевіряє конструктор.
             </p>
           </div>
 

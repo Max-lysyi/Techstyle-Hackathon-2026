@@ -1,0 +1,14 @@
+[
+ {"index":0,"name":"ASKELAT — білий напис на чорній тканині","box":[205,225,255,80],"mode":"light","restore":"telea"},
+ {"index":1,"name":"VICTORY — багатоколірний логотип на світлому","box":[757,883,342,192],"mode":"multicolor","restore":"gradient"},
+ {"index":2,"name":"Номер 10 — темний на світлій формі","box":[193,165,52,65],"mode":"dark","restore":"telea"},
+ {"index":3,"name":"VICTORY — жовтий на синій фактурі","box":[790,718,215,40],"mode":"light","restore":"telea"},
+ {"index":4,"name":"Тризуб — знімок екрана, малий знак","box":[298,516,34,38],"mode":"light","restore":"telea"},
+ {"index":5,"name":"RONY — золоті фактурні літери","box":[22,24,172,44],"mode":"light","restore":"telea"},
+ {"index":6,"name":"RONY — дублікат наданого JPEG","box":[22,24,172,44],"mode":"light","restore":"telea"},
+ {"index":7,"name":"VICTORY — жовтий текст із JPEG-компресією","box":[760,714,182,34],"mode":"light","restore":"telea"},
+ {"index":8,"name":"RONY — напис серед золотих мазків","box":[155,113,310,104],"mode":"light","restore":"telea"},
+ {"index":9,"name":"Тризуб — рожевий градієнт і темна тканина","box":[465,109,48,61],"mode":"light","restore":"telea"},
+ {"index":10,"name":"VICTORY — стиснений скриншот","box":[354,697,103,27],"mode":"light","restore":"telea"},
+ {"index":2,"name":"Кольорова емблема з внутрішніми білими деталями","box":[108,145,42,44],"mode":"emblem","restore":"telea"}
+]

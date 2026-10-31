@@ -1,0 +1,600 @@
+{
+  "schemaVersion": 1,
+  "id": "askelat",
+  "title": "ASKELAT · хвилі",
+  "description": "Чотири деталі, кольорові принти та текстура.",
+  "originalFile": "/demos/askelat/original.jpg",
+  "sourceArchiveSha256": "d8d7cb4424bf3632ba8ea00e5427d180e743ba071e218bb4cf53bb026c3dd47f",
+  "provenance": "Раніше отриманий і збережений результат OpenAI; під час відкриття API не викликається.",
+  "notes": [
+    "Невидимий принт реконструйовано приблизно. Стикування деталей перевіряє конструктор.",
+    "Це збережена генерація 1K; профіль 2K застосовується до нових запусків."
+  ],
+  "parts": [
+    {
+      "id": "front",
+      "name": "Перед",
+      "status": "ready",
+      "canvas": {
+        "width": 1024,
+        "height": 1536
+      },
+      "sourceRect": {
+        "x": 108,
+        "y": 89,
+        "width": 468,
+        "height": 589
+      },
+      "sourceNormalized": {
+        "x": 0.09,
+        "y": 0.06953125,
+        "width": 0.39,
+        "height": 0.46015625
+      },
+      "model": "gpt-image-2.5-sunburst",
+      "usage": [
+        {
+          "input_tokens": 1136,
+          "input_tokens_details": {
+            "image_tokens": 832,
+            "text_tokens": 304
+          },
+          "output_tokens": 343,
+          "output_tokens_details": {
+            "image_tokens": 343,
+            "text_tokens": 0
+          },
+          "total_tokens": 1479
+        },
+        {
+          "input_tokens": 1774,
+          "input_tokens_details": {
+            "image_tokens": 1536,
+            "text_tokens": 238
+          },
+          "output_tokens": 343,
+          "output_tokens_details": {
+            "image_tokens": 343,
+            "text_tokens": 0
+          },
+          "total_tokens": 2117
+        }
+      ],
+      "reconstruction": true,
+      "warnings": [
+        "Розгортка та продовження невидимих ділянок є реконструкцією."
+      ],
+      "groups": [],
+      "layers": [
+        {
+          "id": "part-layer-0",
+          "name": "Основа",
+          "type": "background",
+          "kind": "solid",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 0,
+          "groupId": null,
+          "fillHex": "#000000",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/askelat/parts/front/layers/01.webp",
+          "maskFile": "parts/front/masks/01.png"
+        },
+        {
+          "id": "part-layer-1",
+          "name": "Кольоровий принт 1",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 1,
+          "groupId": null,
+          "fillHex": "#01081d",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/askelat/parts/front/layers/02.webp",
+          "maskFile": "parts/front/masks/02.png"
+        },
+        {
+          "id": "part-layer-6",
+          "name": "Градієнт",
+          "type": "graphic",
+          "kind": "gradient",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 6,
+          "groupId": null,
+          "fillHex": "#209be5",
+          "gradient": {
+            "sourceStops": [
+              "#00012c",
+              "#f2fffe"
+            ],
+            "stops": [
+              "#00012c",
+              "#f2fffe"
+            ]
+          },
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/askelat/parts/front/layers/03.webp",
+          "maskFile": "parts/front/masks/03.png"
+        }
+      ],
+      "masterFile": "/demos/askelat/parts/front/master.webp",
+      "previewFile": "parts/front/preview.png",
+      "backgroundFile": "parts/front/background.png",
+      "paletteFile": "parts/front/palette.csv",
+      "removedMaskFile": null
+    },
+    {
+      "id": "back",
+      "name": "Спинка",
+      "status": "ready",
+      "canvas": {
+        "width": 1024,
+        "height": 1536
+      },
+      "sourceRect": {
+        "x": 612,
+        "y": 89,
+        "width": 492,
+        "height": 589
+      },
+      "sourceNormalized": {
+        "x": 0.51,
+        "y": 0.06953125,
+        "width": 0.41,
+        "height": 0.46015625
+      },
+      "model": "gpt-image-2.5-sunburst",
+      "usage": [
+        {
+          "input_tokens": 1168,
+          "input_tokens_details": {
+            "image_tokens": 864,
+            "text_tokens": 304
+          },
+          "output_tokens": 343,
+          "output_tokens_details": {
+            "image_tokens": 343,
+            "text_tokens": 0
+          },
+          "total_tokens": 1511
+        },
+        {
+          "input_tokens": 1774,
+          "input_tokens_details": {
+            "image_tokens": 1536,
+            "text_tokens": 238
+          },
+          "output_tokens": 343,
+          "output_tokens_details": {
+            "image_tokens": 343,
+            "text_tokens": 0
+          },
+          "total_tokens": 2117
+        }
+      ],
+      "reconstruction": true,
+      "warnings": [
+        "Розгортка та продовження невидимих ділянок є реконструкцією."
+      ],
+      "groups": [],
+      "layers": [
+        {
+          "id": "part-layer-0",
+          "name": "Основа",
+          "type": "background",
+          "kind": "solid",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 0,
+          "groupId": null,
+          "fillHex": "#020507",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/askelat/parts/back/layers/01.webp",
+          "maskFile": "parts/back/masks/01.png"
+        },
+        {
+          "id": "part-layer-1",
+          "name": "Кольоровий принт 1",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 1,
+          "groupId": null,
+          "fillHex": "#01122a",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/askelat/parts/back/layers/02.webp",
+          "maskFile": "parts/back/masks/02.png"
+        },
+        {
+          "id": "part-layer-6",
+          "name": "Градієнт",
+          "type": "graphic",
+          "kind": "gradient",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 6,
+          "groupId": null,
+          "fillHex": "#219ae9",
+          "gradient": {
+            "sourceStops": [
+              "#00093e",
+              "#f7fdfe"
+            ],
+            "stops": [
+              "#00093e",
+              "#f7fdfe"
+            ]
+          },
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/askelat/parts/back/layers/03.webp",
+          "maskFile": "parts/back/masks/03.png"
+        }
+      ],
+      "masterFile": "/demos/askelat/parts/back/master.webp",
+      "previewFile": "parts/back/preview.png",
+      "backgroundFile": "parts/back/background.png",
+      "paletteFile": "parts/back/palette.csv",
+      "removedMaskFile": null
+    },
+    {
+      "id": "right-sleeve",
+      "name": "Правий рукав",
+      "status": "ready",
+      "canvas": {
+        "width": 768,
+        "height": 1536
+      },
+      "sourceRect": {
+        "x": 84,
+        "y": 128,
+        "width": 192,
+        "height": 269
+      },
+      "sourceNormalized": {
+        "x": 0.07,
+        "y": 0.1,
+        "width": 0.16,
+        "height": 0.21015625
+      },
+      "model": "gpt-image-2.5-sunburst",
+      "usage": [
+        {
+          "input_tokens": 514,
+          "input_tokens_details": {
+            "image_tokens": 204,
+            "text_tokens": 310
+          },
+          "output_tokens": 229,
+          "output_tokens_details": {
+            "image_tokens": 229,
+            "text_tokens": 0
+          },
+          "total_tokens": 743
+        },
+        {
+          "input_tokens": 1390,
+          "input_tokens_details": {
+            "image_tokens": 1152,
+            "text_tokens": 238
+          },
+          "output_tokens": 229,
+          "output_tokens_details": {
+            "image_tokens": 229,
+            "text_tokens": 0
+          },
+          "total_tokens": 1619
+        }
+      ],
+      "reconstruction": true,
+      "warnings": [
+        "Розгортка та продовження невидимих ділянок є реконструкцією."
+      ],
+      "groups": [],
+      "layers": [
+        {
+          "id": "part-layer-0",
+          "name": "Основа",
+          "type": "background",
+          "kind": "solid",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1536
+          },
+          "visible": false,
+          "groupHidden": false,
+          "order": 0,
+          "groupId": null,
+          "fillHex": "#010000",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/askelat/parts/right-sleeve/layers/01.webp",
+          "maskFile": "parts/right-sleeve/masks/01.png"
+        },
+        {
+          "id": "part-layer-1",
+          "name": "Кольоровий принт 1",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 1,
+          "groupId": null,
+          "fillHex": "#030a16",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/askelat/parts/right-sleeve/layers/02.webp",
+          "maskFile": "parts/right-sleeve/masks/02.png"
+        },
+        {
+          "id": "part-layer-6",
+          "name": "Градієнт",
+          "type": "graphic",
+          "kind": "gradient",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 6,
+          "groupId": null,
+          "fillHex": "#0482e6",
+          "gradient": {
+            "sourceStops": [
+              "#010516",
+              "#01d1fe"
+            ],
+            "stops": [
+              "#010516",
+              "#01d1fe"
+            ]
+          },
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/askelat/parts/right-sleeve/layers/03.webp",
+          "maskFile": "parts/right-sleeve/masks/03.png"
+        }
+      ],
+      "masterFile": "/demos/askelat/parts/right-sleeve/master.webp",
+      "previewFile": "parts/right-sleeve/preview.png",
+      "backgroundFile": "parts/right-sleeve/background.png",
+      "paletteFile": "parts/right-sleeve/palette.csv",
+      "removedMaskFile": null
+    },
+    {
+      "id": "left-sleeve",
+      "name": "Лівий рукав",
+      "status": "ready",
+      "canvas": {
+        "width": 768,
+        "height": 1536
+      },
+      "sourceRect": {
+        "x": 420,
+        "y": 128,
+        "width": 193,
+        "height": 269
+      },
+      "sourceNormalized": {
+        "x": 0.35,
+        "y": 0.1,
+        "width": 0.16083333333333333,
+        "height": 0.21015625
+      },
+      "model": "gpt-image-2.5-sunburst",
+      "usage": [
+        {
+          "input_tokens": 531,
+          "input_tokens_details": {
+            "image_tokens": 221,
+            "text_tokens": 310
+          },
+          "output_tokens": 229,
+          "output_tokens_details": {
+            "image_tokens": 229,
+            "text_tokens": 0
+          },
+          "total_tokens": 760
+        },
+        {
+          "input_tokens": 1390,
+          "input_tokens_details": {
+            "image_tokens": 1152,
+            "text_tokens": 238
+          },
+          "output_tokens": 229,
+          "output_tokens_details": {
+            "image_tokens": 229,
+            "text_tokens": 0
+          },
+          "total_tokens": 1619
+        }
+      ],
+      "reconstruction": true,
+      "warnings": [
+        "Розгортка та продовження невидимих ділянок є реконструкцією."
+      ],
+      "groups": [],
+      "layers": [
+        {
+          "id": "part-layer-0",
+          "name": "Основа",
+          "type": "background",
+          "kind": "solid",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 0,
+          "groupId": null,
+          "fillHex": "#010101",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/askelat/parts/left-sleeve/layers/01.webp",
+          "maskFile": "parts/left-sleeve/masks/01.png"
+        },
+        {
+          "id": "part-layer-1",
+          "name": "Кольоровий принт 1",
+          "type": "graphic",
+          "kind": "raster",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 1,
+          "groupId": null,
+          "fillHex": "#020916",
+          "gradient": null,
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/askelat/parts/left-sleeve/layers/02.webp",
+          "maskFile": "parts/left-sleeve/masks/02.png"
+        },
+        {
+          "id": "part-layer-6",
+          "name": "Градієнт",
+          "type": "graphic",
+          "kind": "gradient",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1536
+          },
+          "visible": true,
+          "groupHidden": false,
+          "order": 6,
+          "groupId": null,
+          "fillHex": "#0693ec",
+          "gradient": {
+            "sourceStops": [
+              "#001441",
+              "#28f4fe"
+            ],
+            "stops": [
+              "#001441",
+              "#28f4fe"
+            ]
+          },
+          "operations": [
+            "розгортка окремої деталі",
+            "без логотипів та написів",
+            "маски у спільних координатах деталі"
+          ],
+          "file": "/demos/askelat/parts/left-sleeve/layers/03.webp",
+          "maskFile": "parts/left-sleeve/masks/03.png"
+        }
+      ],
+      "masterFile": "/demos/askelat/parts/left-sleeve/master.webp",
+      "previewFile": "parts/left-sleeve/preview.png",
+      "backgroundFile": "parts/left-sleeve/background.png",
+      "paletteFile": "parts/left-sleeve/palette.csv",
+      "removedMaskFile": null
+    }
+  ],
+  "elements": []
+}

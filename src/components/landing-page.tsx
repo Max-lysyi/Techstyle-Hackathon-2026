@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
-  Zap, Layers, Palette, FileImage, ArrowRight, Play,
+  Zap, Layers, Palette, FileImage, ArrowRight,
   Clock, CheckCircle, ArrowDown, ChevronRight
 } from 'lucide-react';
 import { useAppStore } from '@/store/app-store';
@@ -83,14 +83,13 @@ function HeroSection({
           {/* Title */}
           <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black italic tracking-tight leading-none mb-6">
             <span className="text-[#D90416]">AI</span>
-            <span className="text-white"> PRINT </span>
+            <span className="text-white"> PROMT </span>
             <span className="text-[#D90416]">STUDIO</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed mb-8">
-            Автоматична декомпозиція дизайнів, AI-реконструкція якості та генерація пошарових
-            розгорток лекал для сублімаційного друку
+            Чотири розгортки спортивної форми: перед, спинка та два рукави. У кожній — окремі кольорові принти й цілісні градієнти, без логотипів та написів.
           </p>
 
           {/* Tech pills */}
@@ -101,10 +100,10 @@ function HeroSection({
             className="flex flex-wrap items-center justify-center gap-2 mb-10"
           >
             {[
-              { icon: Zap, label: 'Gemini AI Super-Res' },
-              { icon: Layers, label: 'SAM2 + Inpainting' },
-              { icon: Palette, label: 'CIELAB K-Means Layers' },
-              { icon: FileImage, label: 'CMYK TIFF 300 DPI' },
+              { icon: Zap, label: 'OpenAI Vision' },
+              { icon: Layers, label: 'OpenCV + маски' },
+              { icon: Palette, label: 'RGB K-Means' },
+              { icon: FileImage, label: 'PNG + ZIP' },
             ].map((p, i) => (
               <span
                 key={i}
@@ -129,6 +128,9 @@ function HeroSection({
             Почати роботу
             <ArrowRight size={22} />
           </motion.button>
+          <button onClick={onCta} className="block mx-auto mt-5 text-sm text-gray-300 underline underline-offset-4 hover:text-white">
+            Переглянути готові демонстрації без аналізу
+          </button>
         </motion.div>
 
 
@@ -149,33 +151,33 @@ function HeroSection({
 const WORKFLOW_STEPS = [
   {
     n: '01',
-    title: 'Оцінка якості ШІ',
-    desc: 'Аналіз вхідного фото на розмиття, стиснення JPEG та низький DPI.',
+    title: 'Завантаження макета',
+    desc: 'Завантаження JPEG або PNG у локальний редактор.',
   },
   {
     n: '02',
-    title: 'AI-Реконструкція',
-    desc: 'Генеративне покращення чіткості, відтворення дрібних деталей принта.',
+    title: 'Вибір деталі',
+    desc: 'Перед, спинка, правий або лівий рукав — кожна деталь має свою область ескізу.',
   },
   {
     n: '03',
-    title: 'Розкройка в прямокутниках',
-    desc: 'Перенесення принта на прямокутні лекала: пілочка, спинка, рукава.',
+    title: 'Розгортка принта',
+    desc: 'Пропорційне продовження візерунка на прямокутну заготовку без написів.',
   },
   {
     n: '04',
-    title: 'Сепарація кольорів',
-    desc: 'K-Means виділення домінантних кольорів і перерахунок у промисловий CMYK.',
+    title: 'Шари кожної деталі',
+    desc: 'Основа, кольорові принти, орнаменти й цілісний градієнт у спільних координатах.',
   },
   {
     n: '05',
-    title: 'Пошаровий розбір',
-    desc: 'Окремі прозорі шари під кожен колір для перевірки накладання фарб.',
+    title: 'Ручне уточнення',
+    desc: 'Маски, видимість, групування та перефарбування з виробничої палітри.',
   },
   {
     n: '06',
-    title: 'Експорт TIFF / SVG',
-    desc: 'Готові розгортки для миттєвого друку або доопрацювання в Illustrator.',
+    title: 'Експорт PNG / ZIP',
+    desc: 'Окремі папки деталей із PNG-шарами, композицією, масками та палітрою.',
   },
 ];
 
@@ -194,8 +196,7 @@ function WorkflowSection({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
             ПІДГОТОВКИ ДО ДРУКУ.
           </h2>
           <p className="mt-3 text-sm text-gray-500 max-w-xl mx-auto">
-            Як тільки ви завантажуєте концепт клієнта, AI Print Studio автоматично виконує кожен
-            технологічний етап.
+            Завантажте макет, перевірте запропоновані області та виділіть потрібні елементи.
           </p>
         </FadeUp>
 
@@ -231,22 +232,20 @@ function WorkflowSection({ sectionRef }: { sectionRef: React.RefObject<HTMLEleme
 
 /* ---------- SECTION 3: Video & Features ---------- */
 const FEATURE_LIST = [
-  'Прийом будь-яких вхідних даних: стиснені JPEG з месенджерів, фото форми з телефону або AI-генерації.',
-  'Автоматичний аналіз різкості та підвищення роздільної здатності без втрати геометрії.',
-  'Пошарове розбиття макета: переглядайте кожен колір окремо для безпомилкового сублімаційного друку.',
-  'Чисте відновлення фонових градієнтів і патернів під текстами та емблемами (LaMa / OpenCV).',
-  'Автоматична побудова прямокутників розгортки під вибраний розмір спортивної форми.',
-  'Суворе збереження колірного профілю CMYK (ISO Coated v2) та припусків на шви (3–5 мм).',
-  'Пряма сумісність із пайплайном дизайнерів в Adobe Illustrator та CorelDRAW.',
+  'Завантаження JPEG та PNG із комп’ютера.',
+  'Чотири незалежні розгортки: перед, спинка, правий і лівий рукав.',
+  'Перевірка композиції перед наступним платним етапом.',
+  'Основа й кольорові принти кожної деталі без логотипів та написів.',
+  'Ручне уточнення масок і перегляд накладання.',
+  'Порівняння кольорів із завантаженою палітрою виробництва.',
+  'Експорт PNG-шарів, палітри та координат у ZIP.',
 ];
 
 function VideoSection({
   sectionRef,
-  onTrySizes,
   onTryEditor,
 }: {
   sectionRef: React.RefObject<HTMLElement | null>;
-  onTrySizes: () => void;
   onTryEditor: () => void;
 }) {
   return (
@@ -260,7 +259,7 @@ function VideoSection({
           <h2 className="text-3xl sm:text-4xl font-black italic text-white leading-tight">
             Від розмитого фото з телефону
             <br />
-            до <span className="text-[#D90416]">пошарової розгортки лекал</span> за хвилину.
+            до <span className="text-[#D90416]">окремих прозорих шарів</span>.
           </h2>
         </FadeUp>
 
@@ -274,7 +273,7 @@ function VideoSection({
                 <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
                 <div className="w-3 h-3 rounded-full bg-[#28C840]" />
                 <span className="ml-3 text-[11px] text-gray-400 font-mono">
-                  MAXSport AI Print Studio — Demo
+                  AI Promt Studio — Demo
                 </span>
               </div>
               {/* Video placeholder 16:9 */}
@@ -288,25 +287,9 @@ function VideoSection({
                     <div className="w-48 bg-[#252526] border-l border-white/5" />
                   </div>
                 </div>
-                {/* Play button */}
-                <motion.div
-                  animate={{ scale: [1, 1.08, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="relative z-10 w-20 h-20 rounded-full bg-[#D90416]/90 flex items-center justify-center shadow-2xl shadow-red-900/60 cursor-pointer hover:bg-[#D90416] transition-colors"
-                >
-                  <Play size={28} className="text-white ml-1.5" fill="white" />
-                </motion.div>
-                {/* Timecode */}
-                <div className="absolute bottom-3 right-3 text-xs font-mono text-gray-400 bg-black/50 px-2 py-0.5 rounded">
-                  00:00 / 02:15
-                </div>
-                {/* Bottom progress bar */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
-                  <div className="h-full w-0 bg-[#D90416]" />
-                </div>
-                {/* INSERT VIDEO HERE */}
-                {/* <video src="/demo-video.mp4" controls className="absolute inset-0 w-full h-full object-cover" /> */}
-                {/* <iframe src="https://youtube.com/embed/..." className="absolute inset-0 w-full h-full" /> */}
+                <button onClick={onTryEditor} className="relative z-10 px-6 py-3 rounded-xl bg-[#D90416] text-white font-bold text-sm hover:bg-red-700">
+                  Відкрити редактор
+                </button>
               </div>
             </div>
           </FadeUp>
@@ -314,10 +297,10 @@ function VideoSection({
           {/* Right: Features list */}
           <FadeUp delay={0.2} className="space-y-6">
             <h3 className="text-xl font-bold text-[#D90416]">
-              Кожен піксель. Кожен шар. Кожне лекало.
+              Макет. Області. Шари.
               <br />
               <span className="text-white font-medium text-base">
-                Повний контроль перед відправкою на плотер.
+                Перевірка та підготовка елементів макета.
               </span>
             </h3>
 
@@ -340,14 +323,7 @@ function VideoSection({
             </ol>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={onTrySizes}
-                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-sm font-bold hover:bg-white/15 transition-all cursor-pointer"
-              >
-                Таблиці розмірів
-              </motion.button>
+
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
@@ -370,22 +346,22 @@ const B2B_CARDS = [
   {
     icon: '🎨',
     title: 'Пошаровий контроль кольорів',
-    desc: 'Spot & CMYK Channel сепарація усуває бандінг та зміщення кольорів при сублімації.',
+    desc: 'Виділіть елемент за кольором і перевірте його на прозорому фоні.',
   },
   {
     icon: '✏️',
-    title: 'Векторизація Potrace у криві Безьє',
-    desc: 'Логотипи та емблеми автоматично стають SVG-кривими без пікселізації на будь-якому масштабі.',
+    title: 'Приблизні області AI',
+    desc: 'Аналіз допомагає знайти видимі написи, номери та графічні елементи.',
   },
   {
     icon: '📐',
-    title: 'Масштабування під таблиці розмірів',
-    desc: 'Розгортки автоматично підлаштовуються під вибраний розмір форми з офіційних MAXSport таблиць.',
+    title: 'Ручне уточнення',
+    desc: 'Відкоригуйте межі та допуск кольору перед створенням шару.',
   },
   {
     icon: '📦',
-    title: 'Пакетний експорт TIFF (LZW без втрат)',
-    desc: 'Усі шари пакуються в багатошаровий TIFF із повним LZW-стисненням для архіву виробництва.',
+    title: 'Експорт PNG та ZIP',
+    desc: 'Архів містить шари, наближений фон, палітру та координати.',
   },
 ];
 
@@ -421,15 +397,15 @@ function B2BSection({
               </div>
               <div className="flex items-center gap-3 mb-4">
                 <Clock size={28} className="text-orange-400 shrink-0" />
-                <span className="text-4xl font-black text-orange-400">~3 год</span>
+                <span className="text-4xl font-black text-orange-400">Вручну</span>
               </div>
               <ul className="space-y-2 text-sm text-gray-500">
                 {[
-                  'Ручний апскейлінг в Photoshop (30 хв)',
-                  'Ізоляція логотипів пером (60 хв)',
-                  'K-Means кластеризація вручну (45 хв)',
-                  'Побудова розгорток лекал (45 хв)',
-                  'Налаштування CMYK і профілів (30 хв)',
+                  'Пошук елементів на макеті',
+                  'Ручне виділення логотипів',
+                  'Робота з кольорами',
+                  'Відновлення фону',
+                  'Підготовка файлів до друку',
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-orange-300 shrink-0" />
@@ -446,20 +422,20 @@ function B2BSection({
                 </div>
                 <div>
                   <div className="text-xs text-gray-400 uppercase tracking-wider">AI Автоматизація</div>
-                  <div className="font-bold text-white">MAXSport AI Studio</div>
+                  <div className="font-bold text-white">AI Promt Studio</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 mb-4">
                 <Zap size={28} className="text-[#D90416] shrink-0" />
-                <span className="text-4xl font-black text-[#D90416]">~45 сек</span>
+                <span className="text-4xl font-black text-[#D90416]">MVP</span>
               </div>
               <ul className="space-y-2 text-sm text-gray-300">
                 {[
-                  'Автоматичний AI-апскейл (мить)',
-                  'SAM2 ізоляція логотипів (мить)',
-                  'K-Means кластеризація (мить)',
-                  'Розгортка прямокутників (мить)',
-                  'CMYK ICC-профіль (мить)',
+                  'AI-аналіз видимих елементів',
+                  'Уточнення областей вручну',
+                  'Кластеризація кольорів RGB',
+                  'Виділення пікселів за кольором',
+                  'Експорт PNG та ZIP',
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-[#D90416] shrink-0" />
@@ -484,8 +460,8 @@ function B2BSection({
         <FadeUp>
           <div className="text-center mb-10">
             <h2 className="text-2xl font-black italic text-[#1E1E1E]">
-              Підтримка{' '}
-              <span className="text-[#D90416]">промислових стандартів</span>
+              Файли для{' '}
+              <span className="text-[#D90416]">роботи дизайнера</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -506,25 +482,20 @@ function B2BSection({
 }
 
 /* ---------- Footer ---------- */
-function Footer({ onSizes }: { onSizes: () => void }) {
+function Footer() {
   return (
     <footer className="bg-[#1E1E1E] text-gray-400 py-10 border-t border-white/5">
       <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-baseline gap-1 select-none">
-          <span className="text-xl font-black italic text-[#D90416]">MAX</span>
-          <span className="text-xl font-black italic text-white">SPORT</span>
-          <span className="ml-2 text-xs text-gray-500">AI Print Studio v3.2.0</span>
+          <span className="text-xl font-black italic text-[#D90416]">AI</span>
+          <span className="text-xl font-black italic text-white">PROMT STUDIO</span>
+          <span className="ml-2 text-xs text-gray-500">v0.1</span>
         </div>
         <div className="flex flex-wrap gap-4 text-xs">
-          <button
-            onClick={onSizes}
-            className="hover:text-white transition-colors cursor-pointer"
-          >
-            Таблиці розмірів
-          </button>
-          <span className="text-gray-600">maxsport.ua</span>
+
+          <span className="text-gray-600">AI Promt Studio</span>
         </div>
-        <div className="text-xs text-gray-500">© 2026 MAXSport · Clotecs Hackathon</div>
+        <div className="text-xs text-gray-500">© 2026 AI Promt Studio · Clotecs Hackathon</div>
       </div>
     </footer>
   );
@@ -534,20 +505,14 @@ function Footer({ onSizes }: { onSizes: () => void }) {
    Main Landing Page Component
 ================================================================ */
 export function LandingPage() {
-  const { isLoggedIn, navigateTo } = useAppStore();
+  const { navigateTo } = useAppStore();
 
   const heroRef = useRef<HTMLElement>(null);
   const workflowRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLElement>(null);
   const b2bRef = useRef<HTMLElement>(null);
 
-  const handleCta = () => {
-    if (isLoggedIn) {
-      navigateTo('editor');
-    } else {
-      navigateTo('auth', 'register');
-    }
-  };
+  const handleCta = () => navigateTo('editor');
 
   return (
     <div className="overflow-x-hidden">
@@ -556,11 +521,10 @@ export function LandingPage() {
       <WorkflowSection sectionRef={workflowRef} />
       <VideoSection
         sectionRef={videoRef}
-        onTrySizes={() => navigateTo('size-charts')}
         onTryEditor={handleCta}
       />
       <B2BSection sectionRef={b2bRef} onCta={handleCta} />
-      <Footer onSizes={() => navigateTo('size-charts')} />
+      <Footer />
     </div>
   );
 }

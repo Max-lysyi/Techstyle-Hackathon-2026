@@ -3,9 +3,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MAXSport AI Print Studio — Автоматична підготовка дизайнів для сублімації",
+  title: "AI Promt Studio — Розгортки чотирьох деталей",
   description:
-    "AI-платформа для декомпозиції дизайнів спортивної форми: апскейлінг, ізоляція логотипів, CMYK-мепінг кольорів та експорт розгорток лекал у TIFF/SVG для Adobe Illustrator.",
+    "Перед, спинка та два рукави: окремі прямокутні розгортки з кольоровими шарами, градієнтами та виробничою палітрою.",
 };
 
 export default function RootLayout({
