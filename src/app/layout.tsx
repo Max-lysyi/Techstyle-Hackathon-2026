@@ -3,9 +3,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Print Studio — Розгортки чотирьох деталей",
+  title: "AI Print Studio",
   description:
-    "Перед, спинка та два рукави: окремі прямокутні розгортки з кольоровими шарами, градієнтами та виробничою палітрою.",
+    "AI Print Studio — автоматична декомпозиція дизайнів спортивної форми на лекала для сублімаційного друку.",
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' },
+    ],
+  },
 };
 
 export default function RootLayout({

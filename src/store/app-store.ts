@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-export type AppView = 'landing' | 'auth' | 'size-charts' | 'editor';
+export type AppView = 'landing' | 'auth' | 'size-charts' | 'editor' | 'pricing' | 'checkout';
 export type AuthTab = 'login' | 'register';
 
 export interface User {
@@ -10,13 +10,28 @@ export interface User {
   company: string;
 }
 
+export interface PlanDetails {
+  id: 'basic' | 'pro' | 'enterprise';
+  name: string;
+  price: number;
+  period: 'monthly' | 'annually';
+  billingText: string;
+  badge?: string;
+  features: string[];
+}
+
 export interface AppState {
   view: AppView;
   authTab: AuthTab;
   user: User | null;
   isLoggedIn: boolean;
-  // navigation
+  selectedPlan: PlanDetails | null;
+  activeSubscription: string | null;
+
+  // navigation & actions
   navigateTo: (view: AppView, tab?: AuthTab) => void;
+  setSelectedPlan: (plan: PlanDetails | null) => void;
+  setActiveSubscription: (planId: string) => void;
   login: (user: User) => void;
   logout: () => void;
 }
@@ -28,6 +43,8 @@ export const useAppStore = create<AppState>()(
       authTab: 'login',
       user: null,
       isLoggedIn: false,
+      selectedPlan: null,
+      activeSubscription: null,
 
       navigateTo: (view, tab) =>
         set((s) => ({
@@ -35,11 +52,21 @@ export const useAppStore = create<AppState>()(
           authTab: tab ?? s.authTab,
         })),
 
+      setSelectedPlan: (plan) =>
+        set({
+          selectedPlan: plan,
+        }),
+
+      setActiveSubscription: (planId) =>
+        set({
+          activeSubscription: planId,
+        }),
+
       login: (user) =>
         set({
           isLoggedIn: true,
           user,
-          view: 'editor',
+          view: 'pricing', // Redirect to pricing view as requested
         }),
 
       logout: () =>
@@ -47,6 +74,8 @@ export const useAppStore = create<AppState>()(
           isLoggedIn: false,
           user: null,
           view: 'landing',
+          selectedPlan: null,
+          activeSubscription: null,
         }),
     }),
     {
@@ -54,6 +83,7 @@ export const useAppStore = create<AppState>()(
       partialize: (state) => ({
         user: state.user,
         isLoggedIn: state.isLoggedIn,
+        activeSubscription: state.activeSubscription,
       }),
     }
   )

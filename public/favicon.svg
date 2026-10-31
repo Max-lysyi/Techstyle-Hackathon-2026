@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E1E22"/>
+      <stop offset="100%" stop-color="#121214"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF2E44"/>
+      <stop offset="100%" stop-color="#D90416"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="url(#bg)"/>
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" fill="none" stroke="#D90416" stroke-opacity="0.35" stroke-width="1.5"/>
+  <!-- Stylized AI Monogram for AI Print Studio -->
+  <path d="M 6 23 L 11.5 9 L 15.5 9 L 21 23 L 17.2 23 L 15.8 19.5 L 11.2 19.5 L 9.8 23 Z M 12.1 16.5 L 14.9 16.5 L 13.5 12.8 Z" fill="url(#redGrad)"/>
+  <rect x="23" y="9" width="3.5" height="14" rx="1.2" fill="#FFFFFF"/>
+</svg>

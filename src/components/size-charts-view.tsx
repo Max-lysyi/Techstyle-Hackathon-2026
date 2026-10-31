@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { useAppStore } from '@/store/app-store';
@@ -149,26 +150,44 @@ function SizeTable({ groups }: { groups: SizeGroup[] }) {
 }
 
 export function SizeChartsView() {
+  const router = useRouter();
   const { navigateTo } = useAppStore();
   const [tab, setTab] = useState<'men' | 'women'>('men');
+
+  const handleGoHome = () => {
+    navigateTo('landing');
+    router.push('/');
+  };
+
+  const handleOpenStudio = () => {
+    router.push('/studio');
+  };
 
   return (
     <div className="min-h-screen bg-[#F3F4F6]">
       {/* Top bar */}
       <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-sm">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center gap-4">
-          <button
-            onClick={() => navigateTo('landing')}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-all cursor-pointer"
-          >
-            <ArrowLeft size={16} />
-            На головну
-          </button>
-          <div className="flex items-baseline gap-1 select-none">
-            <span className="text-xl font-black italic text-[#D90416]">AI</span>
-            <span className="text-xl font-black italic text-[#1E1E1E]">PRINT STUDIO</span>
+        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={handleGoHome}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-all cursor-pointer"
+            >
+              <ArrowLeft size={16} />
+              На головну
+            </button>
+            <div className="flex items-baseline gap-1 select-none">
+              <span className="text-xl font-black italic text-[#D90416]">AI</span>
+              <span className="text-xl font-black italic text-[#1E1E1E]">PRINT STUDIO</span>
+            </div>
+            <h1 className="text-lg font-black text-[#1E1E1E] hidden sm:inline">Таблиці розмірів</h1>
           </div>
-          <h1 className="text-lg font-black text-[#1E1E1E]">Таблиці розмірів</h1>
+          <button
+            onClick={handleOpenStudio}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#D90416] hover:bg-[#B8000F] text-white text-xs font-bold shadow-md transition-all cursor-pointer"
+          >
+            Відкрити Студію →
+          </button>
         </div>
       </div>
 

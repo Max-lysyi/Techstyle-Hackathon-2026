@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { User, Mail, Building2, Lock, ArrowRight, Zap, Sparkles } from 'lucide-react';
+import { User, Mail, Building2, Lock, ArrowRight } from 'lucide-react';
 import { useAppStore } from '@/store/app-store';
 
 export function AuthView() {
@@ -14,19 +14,13 @@ export function AuthView() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleJuryLogin = async () => {
-    setLoading(true);
-    await new Promise((r) => setTimeout(r, 600));
-    login({ name: 'Журі Хакатону', email: 'jury@clotecs.ua', company: 'Clotecs 2026' });
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     await new Promise((r) => setTimeout(r, 800));
     login({
       name: name || email.split('@')[0] || 'Оператор',
-      email: email,
+      email: email || 'user@printstudio.ai',
       company: company || 'AI Print Studio',
     });
   };
@@ -83,28 +77,6 @@ export function AuthView() {
           </div>
 
           <div className="p-8">
-            {/* Quick jury login */}
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={handleJuryLogin}
-              disabled={loading}
-              className="w-full mb-6 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-bold shadow-lg shadow-amber-200/40 hover:shadow-xl hover:shadow-amber-300/50 transition-all disabled:opacity-60 cursor-pointer"
-            >
-              <Zap size={16} />
-              Швидкий вхід для Журі (1 клік)
-              <Sparkles size={14} />
-            </motion.button>
-
-            <div className="relative mb-6">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-200" />
-              </div>
-              <div className="relative flex justify-center">
-                <span className="px-3 bg-white text-xs text-gray-400">або заповніть форму</span>
-              </div>
-            </div>
-
             <AnimatePresence mode="wait">
               <motion.form
                 key={tab}

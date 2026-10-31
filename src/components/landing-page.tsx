@@ -128,9 +128,7 @@ function HeroSection({
             Почати роботу
             <ArrowRight size={22} />
           </motion.button>
-          <button onClick={onCta} className="block mx-auto mt-5 text-sm text-gray-300 underline underline-offset-4 hover:text-white">
-            Переглянути готові демонстрації без аналізу
-          </button>
+          
         </motion.div>
 
 
@@ -246,7 +244,7 @@ function VideoSection({
   onTryEditor,
 }: {
   sectionRef: React.RefObject<HTMLElement | null>;
-  onTryEditor: () => void;
+  onTryEditor?: () => void;
 }) {
   return (
     <section
@@ -276,20 +274,27 @@ function VideoSection({
                   AI Print Studio — Demo
                 </span>
               </div>
-              {/* Video placeholder 16:9 */}
-              <div className="relative aspect-video bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] flex items-center justify-center">
-                {/* Fake editor screenshot background */}
-                <div className="absolute inset-0 opacity-30">
-                  <div className="h-8 bg-[#1E1E1E] border-b border-white/5" />
-                  <div className="flex h-full">
-                    <div className="w-12 bg-[#252526] border-r border-white/5" />
-                    <div className="flex-1 bg-[#3C3C3C]" />
-                    <div className="w-48 bg-[#252526] border-l border-white/5" />
-                  </div>
-                </div>
-                <button onClick={onTryEditor} className="relative z-10 px-6 py-3 rounded-xl bg-[#D90416] text-white font-bold text-sm hover:bg-red-700">
-                  Відкрити редактор
-                </button>
+              {/* Video container */}
+              <div className="relative aspect-video bg-black overflow-hidden rounded-b-2xl flex items-center justify-center">
+                <video
+                  src="/demo-video.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                  className="w-full h-full object-cover rounded-b-xl"
+                  ref={(el) => {
+                    if (el) {
+                      el.muted = true;
+                      el.play().catch(() => {});
+                    }
+                  }}
+                >
+                  <source src="/demo-video.mp4" type="video/mp4" />
+                  <source src="/demo-video.mov" type="video/quicktime" />
+                  Ваш браузер не підтримує відтворення відео.
+                </video>
               </div>
             </div>
           </FadeUp>
@@ -505,14 +510,20 @@ function Footer() {
    Main Landing Page Component
 ================================================================ */
 export function LandingPage() {
-  const { navigateTo } = useAppStore();
+  const { isLoggedIn, navigateTo } = useAppStore();
 
   const heroRef = useRef<HTMLElement>(null);
   const workflowRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLElement>(null);
   const b2bRef = useRef<HTMLElement>(null);
 
-  const handleCta = () => navigateTo('editor');
+  const handleCta = () => {
+    if (isLoggedIn) {
+      navigateTo('pricing');
+    } else {
+      navigateTo('auth', 'register');
+    }
+  };
 
   return (
     <div className="overflow-x-hidden">

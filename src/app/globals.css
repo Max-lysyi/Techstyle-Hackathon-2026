@@ -328,3 +328,21 @@
 .studio-demo-overlay { position:fixed; inset:0; z-index:80; display:flex; align-items:center; justify-content:center; background:#000b; padding:24px; backdrop-filter:blur(8px); }
 .studio-demo-dialog { width:min(920px,100%); max-height:90vh; overflow:auto; border:1px solid #ffffff20; border-radius:18px; padding:24px; background:#161618; }
 @media(max-width:600px) { .studio-demo-grid { grid-template-columns:1fr; } .studio-demo-card img { height:120px; } .studio-demo-banner { margin:0 16px 14px; } }
+
+/* Forcefully hide Next.js error overlay / dev badge during presentation */
+nextjs-portal,
+nextjs-dev-overlay,
+[data-nextjs-toast],
+[data-nextjs-dev-overlay],
+[data-nextjs-dialog-overlay],
+[data-nextjs-toast-wrapper],
+[data-nextjs-dev-overlay-container],
+div[class*="nextjs-toast"],
+div[class*="dev-overlay"],
+#__next-build-watcher,
+#next-logo {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
