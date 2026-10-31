@@ -166,7 +166,7 @@ export function SizeChartsView() {
           </button>
           <div className="flex items-baseline gap-1 select-none">
             <span className="text-xl font-black italic text-[#D90416]">AI</span>
-            <span className="text-xl font-black italic text-[#1E1E1E]">PROMT STUDIO</span>
+            <span className="text-xl font-black italic text-[#1E1E1E]">PRINT STUDIO</span>
           </div>
           <h1 className="text-lg font-black text-[#1E1E1E]">Таблиці розмірів</h1>
         </div>

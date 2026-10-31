@@ -78,7 +78,7 @@ async function main() {
     await click('Відновити фон');
     if (noKey) { await wait(`document.querySelectorAll('[role="alert"]').length >= 3 && !document.body.innerText.includes('Відновлення…')`); assert.equal(imageCalls,0); }
     else { await wait(`document.body.innerText.includes('AI-реконструкція (gpt-image-2.5-flare)')`); assert.equal(imageCalls,1); await click('Прийняти'); await click('Відновити фон'); await wait(`document.body.innerText.includes('із кешу')`); assert.equal(imageCalls,1); await click('Прийняти'); }
-    await click('Експортувати проєкт');const zipPath=path.join(downloads,'AI_Promt_Studio_decomposition.zip');await waitFor(()=>fs.existsSync(zipPath), 'ZIP download');await delay(500);
+    await click('Експортувати проєкт');const zipPath=path.join(downloads,'AI_Print_Studio_decomposition.zip');await waitFor(()=>fs.existsSync(zipPath), 'ZIP download');await delay(500);
     const zip=await fsp.readFile(zipPath);assert.equal(spawnSync('unzip',['-t',zipPath]).status,0);const files=entries(zip), manifest=JSON.parse(files.get('manifest.json').toString());
     assert.deepEqual(manifest.canvas,{width:300,height:200});assert.equal(manifest.reconstruction.method,noKey ? 'local' : 'openai');assert.ok(files.get('original.png').equals(original));assert.ok(files.has('palette.csv'));
     const bg=await sharp(files.get('background.png')).ensureAlpha().raw().toBuffer({resolveWithObject:true}), orig=await sharp(original).ensureAlpha().raw().toBuffer();

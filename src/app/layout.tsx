@@ -3,7 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Promt Studio — Розгортки чотирьох деталей",
+  title: "AI Print Studio — Розгортки чотирьох деталей",
   description:
     "Перед, спинка та два рукави: окремі прямокутні розгортки з кольоровими шарами, градієнтами та виробничою палітрою.",
 };

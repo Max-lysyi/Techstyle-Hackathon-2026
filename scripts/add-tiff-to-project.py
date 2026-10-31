@@ -80,7 +80,7 @@ def _convert(source: Path, target: Path):
 def convert(source: Path, target: Path):
     if target.exists():
         raise ValueError('Output already exists; choose a new filename.')
-    with tempfile.TemporaryDirectory(prefix='.ai-promt-tiff-', dir=target.parent) as work:
+    with tempfile.TemporaryDirectory(prefix='.ai-print-tiff-', dir=target.parent) as work:
         temporary = Path(work) / 'project.zip'
         count = _convert(source, temporary)
         # Publish only after verification, without overwriting a concurrent file.

@@ -1,4 +1,4 @@
-# AI Promt Studio — розгортки деталей
+# AI Print Studio — розгортки деталей
 
 Зведений JPEG/PNG ескіз спортивної форми → **чотири незалежні прямокутні заготовки**: перед, спинка, правий і лівий рукав. У кожної деталі своя роздільність, основа та довільна кількість кольорових принтів/орнаментів/текстур. Градієнт зберігається цілісним шаром. Логотипи, герби, написи й номери прибираються з розгорток і опрацьовуються окремо: AI-реконструкція у більшій роздільності або локальне вирізання з оригіналу.
 
@@ -56,7 +56,7 @@ npm run start -- --port 8000
 
 ## ZIP
 
-`AI_Promt_Studio_project.zip` містить точний `original.jpg/png`, кореневі `manifest.json` та оглядовий `preview.png`. У `parts/front`, `parts/back`, `parts/right-sleeve`, `parts/left-sleeve` для кожної готової деталі:
+`AI_Print_Studio_project.zip` містить точний `original.jpg/png`, кореневі `manifest.json` та оглядовий `preview.png`. У `parts/front`, `parts/back`, `parts/right-sleeve`, `parts/left-sleeve` для кожної готової деталі:
 
 - `master.png` — прийнята й очищена розгортка;
 - `background.png` — однотонна основа;
@@ -78,10 +78,10 @@ TIFF є справжнім файлом із TIFF-заголовком, опис
 Старі архіви `MAXSport_parts*.zip` можна доповнити TIFF без повторної AI-генерації (потрібен Pillow):
 
 ```bash
-python3 scripts/add-tiff-to-project.py 'MAXSport_parts(1).zip' AI_Promt_Studio_project_with_TIFF.zip
+python3 scripts/add-tiff-to-project.py 'MAXSport_parts(1).zip' AI_Print_Studio_project_with_TIFF.zip
 ```
 
-Скрипт зберігає PNG/JPEG без змін, додає TIFF і посилання в manifest, перевіряє RGBA та CRC. Початковий архів не змінюється; наявний вихідний файл не перезаписується. У поточному вебредакторі залиште «TIFF у ZIP» увімкненим. Архів із нового експортера має назву `AI_Promt_Studio_project.zip`. Якщо вкладка досі завантажує `MAXSport_parts.zip`, вона використовує попередній код: спершу експортуйте поточну сесію, а потім оновіть сторінку.
+Скрипт зберігає PNG/JPEG без змін, додає TIFF і посилання в manifest, перевіряє RGBA та CRC. Початковий архів не змінюється; наявний вихідний файл не перезаписується. У поточному вебредакторі залиште «TIFF у ZIP» увімкненим. Архів із нового експортера має назву `AI_Print_Studio_project.zip`. Якщо вкладка досі завантажує `MAXSport_parts.zip`, вона використовує попередній код: спершу експортуйте поточну сесію, а потім оновіть сторінку.
 
 ## Палітра виробництва
 

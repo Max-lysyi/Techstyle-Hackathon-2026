@@ -962,7 +962,7 @@ async function exportPartProject(palette:FactoryColor[],paletteSource:string){
   files.push({name:'preview.png',bytes:await encodePng(ctx.getImageData(0,0,sheet.width,sheet.height))});
   files.push({name:'manifest.json',bytes:encoder.encode(JSON.stringify({schemaVersion:2,kind:'garment-part-print-project',units:'px',anatomicalSides:true,originalFile,originalCanvas:editor.uploadedImageData?{width:editor.uploadedImageData.width,height:editor.uploadedImageData.height}:null,previewFile:'preview.png',factoryPaletteSource:paletteSource,demoProject:state.demoProject,parts,elements,detectedElements:graphicEntries(state).map(e=>({id:e.id,name:e.name,type:e.type,sourceBounds:e.bbox,acceptedAI:!!state.assetVariants[e.id]?.accepted})),elementAnalysis:state.assetUsage,note:'Чотири окремі прямокутні заготовки з власними шарами. Не лекала. Невидимий принт реконструйовано приблизно; фізичні розміри не задано. CMYK макета приблизний; фабричні зразки з наданої таблиці.'},null,2))});
   if(state.includeTiff)await appendTiffCopies(files,exportProgress=>useDecomposition.setState({exportProgress}));
-  downloadBlob(zipFiles(files),'AI_Promt_Studio_project.zip');
+  downloadBlob(zipFiles(files),'AI_Print_Studio_project.zip');
 }
 
 function PartLayerList({image,palette}:{image:ImageData;palette:FactoryColor[]}){
@@ -1093,7 +1093,7 @@ export function DecompositionSidebar() {
         files.push({ name: manifest.layers[i].file, bytes: await encodePng(maskedPixels(image, layer.mask, layer.bounds, layer.foreground)) });
       }
       if(state.includeTiff)await appendTiffCopies(files,exportProgress=>useDecomposition.setState({exportProgress}));
-      downloadBlob(zipFiles(files), 'AI_Promt_Studio_decomposition.zip');
+      downloadBlob(zipFiles(files), 'AI_Print_Studio_decomposition.zip');
     } catch (error) {
       state.setError(error instanceof Error ? error.message : 'Не вдалося створити ZIP');
     } finally { setBusy(false); }
@@ -1435,7 +1435,7 @@ export function StudioWorkspace(){
   return <div className="studio-shell" onDragOver={e=>{if(e.dataTransfer.types.includes('Files')){e.preventDefault();setDragging(true);}}} onDragLeave={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node))setDragging(false);}} onDrop={e=>{e.preventDefault();setDragging(false);void load(e.dataTransfer.files[0]);}}>
     <input ref={fileRef} type="file" accept="image/jpeg,image/png" className="hidden" aria-label="Завантажити макет" onChange={e=>{void load(e.target.files?.[0]);e.target.value='';}}/>
     <header className="studio-header">
-      <Link href="/" onClick={()=>useAppStore.getState().navigateTo('landing')} className="text-left shrink-0"><span className="font-semibold tracking-tight text-lg"><span className="text-[#ec2439]">AI</span> Promt Studio</span></Link>
+      <Link href="/" onClick={()=>useAppStore.getState().navigateTo('landing')} className="text-left shrink-0"><span className="font-semibold tracking-tight text-lg"><span className="text-[#ec2439]">AI</span> Print Studio</span></Link>
       <div className="studio-steps" aria-label="Етап роботи">{['Макет','Обробка','Результат'].map((name,i)=><span key={name} className={`flex items-center gap-2 ${i===(busy?1:(ready||assetCount)?2:0)?'text-white':'text-gray-500'}`}><span className={`studio-step ${i===(busy?1:(ready||assetCount)?2:0)?'studio-step-active':''}`}>{(i===0&&editor.uploadedImageData)||(i===1&&ready===4)?<Check size={12}/>:i+1}</span>{name}{i<2&&<ChevronRight size={14} className="ml-2 mr-2 text-gray-700"/>}</span>)}</div>
       <div className="flex items-center gap-2"><button className="studio-soft" disabled={busy||uploading||exporting} onClick={()=>setGallery(true)}>Демонстрації</button>{editor.uploadedImageData&&<><button className="studio-soft" onClick={()=>fileRef.current?.click()} disabled={uploading||exporting}><Upload size={14}/>Інший макет</button><button className={`studio-soft ${screen==='tools'?'text-red-300':''}`} onClick={()=>screen==='tools'?(state.assetView?showAssets():showOverview()):tools()}><Settings2 size={14}/><span className="hidden sm:inline">Інструменти</span></button></>}</div>
     </header>

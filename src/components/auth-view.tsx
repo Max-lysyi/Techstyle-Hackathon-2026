@@ -27,7 +27,7 @@ export function AuthView() {
     login({
       name: name || email.split('@')[0] || 'Оператор',
       email: email,
-      company: company || 'AI Promt Studio',
+      company: company || 'AI Print Studio',
     });
   };
 
@@ -52,7 +52,7 @@ export function AuthView() {
             className="inline-flex items-baseline gap-1 select-none cursor-pointer"
           >
             <span className="text-3xl font-black italic text-[#D90416]">AI</span>
-            <span className="text-3xl font-black italic text-white">PROMT STUDIO</span>
+            <span className="text-3xl font-black italic text-white">PRINT STUDIO</span>
           </button>
           <div className="mt-2">
             <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#D90416]/20 border border-[#D90416]/30 text-[11px] font-bold text-[#D90416] tracking-wider uppercase">
@@ -205,7 +205,7 @@ export function AuthView() {
         </div>
 
         <p className="mt-6 text-center text-xs text-gray-500">
-          © 2026 AI Promt Studio · AI Promt Studio · Clotecs Hackathon
+          © 2026 AI Print Studio · Clotecs Hackathon
         </p>
       </motion.div>
     </div>

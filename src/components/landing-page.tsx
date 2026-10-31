@@ -83,7 +83,7 @@ function HeroSection({
           {/* Title */}
           <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black italic tracking-tight leading-none mb-6">
             <span className="text-[#D90416]">AI</span>
-            <span className="text-white"> PROMT </span>
+            <span className="text-white"> PRINT </span>
             <span className="text-[#D90416]">STUDIO</span>
           </h1>
 
@@ -273,7 +273,7 @@ function VideoSection({
                 <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
                 <div className="w-3 h-3 rounded-full bg-[#28C840]" />
                 <span className="ml-3 text-[11px] text-gray-400 font-mono">
-                  AI Promt Studio — Demo
+                  AI Print Studio — Demo
                 </span>
               </div>
               {/* Video placeholder 16:9 */}
@@ -422,7 +422,7 @@ function B2BSection({
                 </div>
                 <div>
                   <div className="text-xs text-gray-400 uppercase tracking-wider">AI Автоматизація</div>
-                  <div className="font-bold text-white">AI Promt Studio</div>
+                  <div className="font-bold text-white">AI Print Studio</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 mb-4">
@@ -488,14 +488,14 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-baseline gap-1 select-none">
           <span className="text-xl font-black italic text-[#D90416]">AI</span>
-          <span className="text-xl font-black italic text-white">PROMT STUDIO</span>
+          <span className="text-xl font-black italic text-white">PRINT STUDIO</span>
           <span className="ml-2 text-xs text-gray-500">v0.1</span>
         </div>
         <div className="flex flex-wrap gap-4 text-xs">
 
-          <span className="text-gray-600">AI Promt Studio</span>
+          <span className="text-gray-600">AI Print Studio</span>
         </div>
-        <div className="text-xs text-gray-500">© 2026 AI Promt Studio · Clotecs Hackathon</div>
+        <div className="text-xs text-gray-500">© 2026 AI Print Studio · Clotecs Hackathon</div>
       </div>
     </footer>
   );
